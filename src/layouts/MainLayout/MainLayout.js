@@ -1,6 +1,5 @@
 import {Outlet, useNavigate} from "react-router-dom";
 import {Header} from "../../components";
-import {Button} from "../../components/Button/Button";
 
 const MainLayout = () => {
     const navigate = useNavigate();
