@@ -1,8 +1,8 @@
-import {Posts} from "../Posts/Posts";
+import {Link, useNavigate} from "react-router-dom";
+import {Button} from "../Button/Button";
 
-const User = ({user, userIdState}) => {
-    const [userId, setUserId] = userIdState;
-
+const User = ({user}) => {
+    const navigate = useNavigate();
     const {id, name, username} = user;
     return (
         <div>
@@ -11,8 +11,11 @@ const User = ({user, userIdState}) => {
                 <div>name: {name}</div>
                 <div>username: {username}</div>
             </div>
-            <button onClick={()=>setUserId(id)}>ShowPosts</button>
-            {userId===id&&<Posts userId={id}/>}
+            {/*<button onClick={()=>navigate(`${id}`, {state:user, replace:true})}>Details</button>*/}
+            {/*<Link to={`${id}`} state={user}>*/}
+            {/*    <button>Details</button>*/}
+            {/*</Link>*/}
+            <Button to={`${id}`} state={user}>UserDetails</Button>
         </div>
     );
 };
